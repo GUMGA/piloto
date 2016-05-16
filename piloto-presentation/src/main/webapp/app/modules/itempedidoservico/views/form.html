@@ -1,0 +1,29 @@
+<form name="ItemPedidoServicoForm" gumga-form novalidate>
+		
+
+	<div gumga-form-class="servico">
+		<label gumga-translate-tag="itempedidoservico.servico">servico</label>
+	    <gumga-many-to-one
+	            input-name="servico"
+	            value="itempedidoservico.data.servico"
+	            search-method="servico.methods.asyncSearch('nome', param)"
+	            field="nome"
+	            authorize-add="true"
+	            post-method="servico.methods.asyncPost(value, 'nome')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+	<div gumga-form-class="horas">
+		<label gumga-translate-tag="itempedidoservico.horas">horas</label>
+		<input gumga-error type="text" name="horas" ng-model="itempedidoservico.data.horas"  class="form-control" />
+	</div>    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="itempedidoservico.list"
+            submit="itempedidoservico.methods.put(itempedidoservico.data)"
+            position="right"
+            valid="ItemPedidoServicoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

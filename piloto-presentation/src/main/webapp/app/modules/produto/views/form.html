@@ -1,0 +1,37 @@
+<form name="ProdutoForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="produto.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="produto.data.nome"  class="form-control" />
+	</div>		
+	<div gumga-form-class="valor">
+		<label gumga-translate-tag="produto.valor">valor</label>
+		<input gumga-error type="text" name="valor" ng-model="produto.data.valor"  class="form-control" />
+	</div>		
+	<div gumga-form-class="quantidade">
+		<label gumga-translate-tag="produto.quantidade">quantidade</label>
+		<input gumga-error type="text" name="quantidade" ng-model="produto.data.quantidade"  class="form-control" />
+	</div>		
+
+	<div gumga-form-class="marca">
+		<label gumga-translate-tag="produto.marca">marca</label>
+	    <gumga-many-to-one
+	            input-name="marca"
+	            value="produto.data.marca"
+	            search-method="marca.methods.asyncSearch('nome', param)"
+	            field="nome"
+	            authorize-add="true"
+	            post-method="marca.methods.asyncPost(value, 'nome')">
+	    </gumga-many-to-one>
+	</div>
+
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="produto.list"
+            submit="produto.methods.put(produto.data)"
+            position="right"
+            valid="ProdutoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

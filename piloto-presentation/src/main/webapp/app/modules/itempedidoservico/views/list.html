@@ -1,0 +1,41 @@
+	<div class="row">
+	
+	    <div class="col-md-5">
+	      <a ui-sref="itempedidoservico.insert" class="btn btn-primary">
+	        <i class="glyphicon glyphicon-plus"></i>Novo
+	      </a>
+	
+	      <button type="button" class="btn btn-danger" ng-click="itempedidoservico.methods.delete(selectedValues)" gumga-confirm="Deseja remover?">
+	        <i class="glyphicon glyphicon-trash"></i>Remover
+	      </button>
+	    </div>
+	
+	    <div class="col-md-7">
+	        <gumga-query search="itempedidoservico.methods.search(field,param)" advanced-search="itempedidoservico.methods.advancedSearch(param)" saved-filters="itempedidoservico.methods.getQuery(page)">
+	            <search-field label="servico" field="servico"></search-field>
+	            <search-field label="horas" field="horas"></search-field>
+	            <advanced-search-field  type="string"  label="servico" field="servico"></advanced-search-field>
+	            <advanced-search-field  type="number"  label="horas" field="horas"></advanced-search-field>
+	        </gumga-query>
+	    </div>
+	</div>
+	
+	<div class="full-width-without-padding">
+	    <gumga-list sort="itempedidoservico.methods.sort(field, dir)"
+	           class="table-striped table-condensed"
+	            data="itempedidoservico.data"
+	            configuration="tableConfig">
+	    </gumga-list>
+	</div>
+
+	<pagination ng-model="page"
+	            max-size="10"
+	            boundary-links="true"
+	            previous-text="‹"
+	            next-Text="›"
+	            first-text="«"
+	            last-text="»"
+	            items-per-page="itempedidoservico.pageSize"
+	            total-items="itempedidoservico.count"
+	            ng-change="itempedidoservico.methods.get(page)">
+	</pagination>

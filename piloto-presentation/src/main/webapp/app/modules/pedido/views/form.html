@@ -1,0 +1,71 @@
+<form name="PedidoForm" gumga-form novalidate>
+		
+	<div gumga-form-class="numero">
+		<label gumga-translate-tag="pedido.numero">numero</label>
+		<input gumga-error type="text" name="numero" ng-model="pedido.data.numero"  class="form-control" />
+	</div>		
+	<div gumga-form-class="quando">
+		<label gumga-translate-tag="pedido.quando">quando</label>
+		<p class="input-group">
+			<input type="text" name="quando" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="pedido.data.quando" is-open="openedQuando" ng-click="openedQuando = !openedQuando" close-text="Close" />
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</span>
+		</p>
+	</div>		
+
+	<div gumga-form-class="cliente">
+		<label gumga-translate-tag="pedido.cliente">cliente</label>
+	    <gumga-many-to-one
+	            input-name="cliente"
+	            value="pedido.data.cliente"
+	            search-method="cliente.methods.asyncSearch('nome', param)"
+	            field="nome"
+	            authorize-add="true"
+	            post-method="cliente.methods.asyncPost(value, 'nome')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+
+	<div class="row">
+		<div class="col-md-12">
+			<gumga-address name="enderecoDeEntrega" value="pedido.data.enderecoDeEntrega" street="false"> </gumga-address>
+		</div>
+	</div>
+		
+
+	<div class="full-width-without-padding">
+	    <label for="produtos" gumga-translate-tag="pedido.produtos"></label>
+	
+		<gumga-one-to-many
+		        children="pedido.data.produtos"
+		        template-url="app/modules/pedido/views/modalItemPedidoProduto.html"
+		        displayable-property="produto"
+		        controller="ModalItemPedidoProdutoController">
+		</gumga-one-to-many>
+	</div>
+		
+
+	<div class="full-width-without-padding">
+	    <label for="servicos" gumga-translate-tag="pedido.servicos"></label>
+	
+		<gumga-one-to-many
+		        children="pedido.data.servicos"
+		        template-url="app/modules/pedido/views/modalItemPedidoServico.html"
+		        displayable-property="servico"
+		        controller="ModalItemPedidoServicoController">
+		</gumga-one-to-many>
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="pedido.list"
+            submit="pedido.methods.put(pedido.data)"
+            position="right"
+            valid="PedidoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

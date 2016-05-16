@@ -1,0 +1,85 @@
+<form name="FuncionarioForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="funcionario.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="funcionario.data.nome"  class="form-control" />
+	</div>		
+
+	<div gumga-form-class="email">
+	    <label gumga-translate-tag="funcionario.email">email</label>
+	    <input id="email" gumga-error type="email" name="email"  ng-model="funcionario.data.email.value" class="form-control"/>
+	</div>
+		
+
+	<div gumga-form-class="telefone">
+		<label gumga-translate-tag="funcionario.telefone">telefone</label>
+		<input id="telefone" gumga-error type="text" name="telefone"  ng-model="funcionario.data.telefone.value" class="form-control" ui-br-phone-number/>
+	</div>
+		
+
+	<div class="row">
+		<div class="col-md-12">
+			<gumga-address name="endereco" value="funcionario.data.endereco" street="false"> </gumga-address>
+		</div>
+	</div>
+		
+
+	<div gumga-form-class="ativo">
+		<label gumga-translate-tag="funcionario.ativo">ativo</label>
+		<input style="width:15px" gumga-error type="checkbox"  name="ativo" ng-model="funcionario.data.ativo.value" class="form-control" />
+	</div>
+		
+
+	<div gumga-form-class="cpf">
+	    <label gumga-translate-tag="funcionario.cpf">"cpf</label>
+	    <input id="cpf"
+	            gumga-mask="999.999.999-99"
+	            gumga-error type="text" name="cpf"
+	            
+	            ng-model="funcionario.data.cpf.value"
+	            class="form-control"/>
+	</div>
+		
+	<div gumga-form-class="quando">
+		<label gumga-translate-tag="funcionario.dataNascimento">dataNascimento</label>
+		<p class="input-group">
+			<input type="text" name="dataNascimento" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="funcionario.data.dataNascimento" is-open="openedDataNascimento" ng-click="openedDataNascimento = !openedDataNascimento" close-text="Close" />
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</span>
+		</p>
+	</div>		
+
+    <div class="col-md-6">
+        <label for="capacidades" gumga-translate-tag="servico.title"></label>
+    </div>
+    
+    <div class="col-md-6">
+        <label for="funcionario.capacidades" gumga-translate-tag="funcionario.capacidades"></label>
+    </div>
+
+	<div class="full-width-without-padding">
+	    <gumga-many-to-many 
+	            left-list="servico.data" 
+	            right-list="funcionario.data.capacidades" 
+	            left-search="servico.methods.search('nome', param)"
+	            filter-parameters="nome"
+	            post-method="servico.methods.save(value)"
+	            authorize-add="true">
+	        <left-field>{{$value.nome}}</left-field>
+	        <right-field>{{$value.nome}}</right-field>
+	    </gumga-many-to-many>
+	</div>
+
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="funcionario.list"
+            submit="funcionario.methods.put(funcionario.data)"
+            position="right"
+            valid="FuncionarioForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

@@ -1,0 +1,51 @@
+	<div class="row">
+	
+	    <div class="col-md-5">
+	      <a ui-sref="cliente.insert" class="btn btn-primary">
+	        <i class="glyphicon glyphicon-plus"></i>Novo
+	      </a>
+	
+	      <button type="button" class="btn btn-danger" ng-click="cliente.methods.delete(selectedValues)" gumga-confirm="Deseja remover?">
+	        <i class="glyphicon glyphicon-trash"></i>Remover
+	      </button>
+	    </div>
+	
+	    <div class="col-md-7">
+	        <gumga-query search="cliente.methods.search(field,param)" advanced-search="cliente.methods.advancedSearch(param)" saved-filters="cliente.methods.getQuery(page)">
+	            <search-field label="nome" field="nome"></search-field>
+	            <search-field label="email" field="email"></search-field>
+	            <search-field label="telefone" field="telefone"></search-field>
+	            <search-field label="endereco" field="endereco"></search-field>
+	            <search-field label="ativo" field="ativo"></search-field>
+	            <search-field label="cnpj" field="cnpj"></search-field>
+	            <search-field label="url" field="url"></search-field>
+	            <advanced-search-field  type="string"  label="nome" field="nome"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="email" field="email"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="telefone" field="telefone"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="endereco" field="endereco"></advanced-search-field>
+	            <advanced-search-field  type="boolean"  label="ativo" field="ativo"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="cnpj" field="cnpj"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="url" field="url"></advanced-search-field>
+	        </gumga-query>
+	    </div>
+	</div>
+	
+	<div class="full-width-without-padding">
+	    <gumga-list sort="cliente.methods.sort(field, dir)"
+	           class="table-striped table-condensed"
+	            data="cliente.data"
+	            configuration="tableConfig">
+	    </gumga-list>
+	</div>
+
+	<pagination ng-model="page"
+	            max-size="10"
+	            boundary-links="true"
+	            previous-text="‹"
+	            next-Text="›"
+	            first-text="«"
+	            last-text="»"
+	            items-per-page="cliente.pageSize"
+	            total-items="cliente.count"
+	            ng-change="cliente.methods.get(page)">
+	</pagination>

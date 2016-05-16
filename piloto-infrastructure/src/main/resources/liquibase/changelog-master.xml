@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="decimal" value="java.sql.Types.NUMERIC(19,2)"  />
+    <property name="currency" value="java.sql.Types.NUMERIC(24,4)"  />
+    <property name="longdecimal" value="java.sql.Types.NUMERIC(24,8)"  />
+    <property name="number" value="java.sql.Types.NUMERIC(19,0)"  />
+    <property name="int" value="java.sql.Types.BIGINT"  />
+    <property name="smallint" value="java.sql.Types.INTEGER"  />
+
+    <property name="time" value="java.sql.Types.TIME"  />
+    <property name="date" value="java.sql.Types.DATE"  />
+    <property name="datetime" value="java.sql.Types.TIMESTAMP"  />
+
+    <property name="flag" value="java.sql.Types.CHAR(1)" />
+
+    <property name="varchar_5" value="java.sql.Types.VARCHAR(5)"  />
+    <property name="varchar_20" value="java.sql.Types.VARCHAR(20)"  />
+    <property name="varchar_70" value="java.sql.Types.VARCHAR(70)"  />
+    <property name="varchar_255" value="java.sql.Types.VARCHAR(255)"  />
+    <property name="varchar_3000" value="java.sql.Types.VARCHAR(3000)" />
+    <property name="varchar_4000" value="java.sql.Types.VARCHAR(4000)" />
+
+    <property name="boolean" value="java.sql.Types.BOOLEAN"  />
+
+
+    <include file="v1.0.0-changelog.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
+
+

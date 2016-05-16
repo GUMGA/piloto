@@ -1,0 +1,33 @@
+<form name="EntregaForm" gumga-form novalidate>
+		
+	<div gumga-form-class="quando">
+		<label gumga-translate-tag="entrega.quando">quando</label>
+		<p class="input-group">
+			<input type="text" name="quando" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="entrega.data.quando" is-open="openedQuando" ng-click="openedQuando = !openedQuando" close-text="Close" />
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open()">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</button>
+			</span>
+		</p>
+	</div>		
+	<div gumga-form-class="quantidade">
+		<label gumga-translate-tag="entrega.quantidade">quantidade</label>
+		<input gumga-error type="text" name="quantidade" ng-model="entrega.data.quantidade"  class="form-control" />
+	</div>		
+
+	<div class="row">
+		<div class="col-md-12">
+			<gumga-address name="endereco" value="entrega.data.endereco" street="false"> </gumga-address>
+		</div>
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="entrega.list"
+            submit="entrega.methods.put(entrega.data)"
+            position="right"
+            valid="EntregaForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

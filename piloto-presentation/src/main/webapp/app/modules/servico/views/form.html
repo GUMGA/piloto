@@ -1,0 +1,36 @@
+<form name="ServicoForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="servico.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="servico.data.nome"  class="form-control" />
+	</div>
+	<div gumga-form-class="codigoUniversal">
+		<label gumga-translate-tag="servico.codigoUniversal">codigoUniversal</label>
+		<input gumga-error type="text" name="codigoUniversal" ng-model="servico.data.codigoUniversal"  class="form-control" />
+	</div>
+	<div gumga-form-class="arquivo">
+		<label gumga-translate-tag="servico.arquivo">arquivo</label>
+		<input gumga-error type="text" name="arquivo" ng-model="servico.data.arquivo.name"  class="form-control" />
+	</div>
+    <div>
+        <label gumga-translate-tag=""></label>
+        <gumga-file-upload
+            model="servico.data.arquivo"
+            attribute="arquivo"
+            endpoint="http://localhost:8084/piloto-api/api/user/arquivo"
+            accepted="png,jpg,pdf,deb,rar,zip" 
+            max-size="102400"
+            on-upload-start="uploadStart()"
+            on-upload-complete="uploadComplete(e)">
+        </gumga-file-upload>
+    </div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="servico.list"
+            submit="servico.methods.put(servico.data)"
+            position="right"
+            valid="ServicoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>
