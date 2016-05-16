@@ -1,0 +1,31 @@
+<form name="MarcaForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="marca.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="marca.data.nome"  class="form-control" />
+	</div>		
+
+	<div class="row">
+		<div class="col-md-12">
+			<label gumga-translate-tag="marca.location">location</label>
+			<div gumga-form-class="locationlatitude">
+				<label gumga-translate-tag="gumga.latitude">Latitude</label>
+				<input gumga-error type="text" name="locationlatitude"  ng-model="marca.data.location.latitude" class="form-control"/>
+			</div>
+			<div gumga-form-class="locationlongitude">
+				<label gumga-translate-tag="gumga.longitude">Longitude</label>
+				<input gumga-error type="text" name="locationlongitude"  ng-model="marca.data.location.longitude" class="form-control" />
+			</div>
+			<a class="btn btn-default" ng-href="http://maps.google.com/maps?q={{marca.data.location.latitude + ',' + marca.data.location.longitude}}" target="_blank"> <p class="glyphicon glyphicon-globe"></p> GOOGLE MAPS</a>
+		</div>
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="marca.list"
+            submit="marca.methods.put(marca.data)"
+            position="right"
+            valid="MarcaForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

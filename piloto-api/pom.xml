@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>br.com.empresa</groupId>
+        <artifactId>piloto</artifactId>
+        <version>1.1</version>
+    </parent>
+    <artifactId>piloto-api</artifactId>
+    <name>piloto-api</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <packaging>war</packaging>
+    <dependencies>
+        <!-- DEPENDENCIAS de Módulos    -->
+        <dependency>
+            <groupId>br.com.empresa</groupId>
+            <artifactId>piloto-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.empresa</groupId>
+            <artifactId>piloto-gateway</artifactId>
+        </dependency>
+        <!-- DEPENDENCIAS do Framework GUMGA    -->
+        <dependency>
+            <groupId>gumga.framework</groupId>
+            <artifactId>gumga-domain</artifactId>
+        </dependency>
+        <!-- DEPENDENCIAS em geral-->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>piloto-api</warName>
+                    <!-- Depois, ignorar todos os arquivos JavaScript e CSS pois eles serão copiados pelo requirejs-maven-plugin -->
+                    <!-- <warSourceExcludes>**/*.js,**/*.css</warSourceExcludes> -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,15 @@
+[
+  "CRUD-BASE",
+  "CUSTOMFIELDS",
+  "TAGS",
+  "CONFIGURATION"
+,"CRUD-Funcionario"
+,"CRUD-Cliente"
+,"CRUD-Pedido"
+,"CRUD-ItemPedidoProduto"
+,"CRUD-ItemPedidoServico"
+,"CRUD-Entrega"
+,"CRUD-Produto"
+,"CRUD-Servico"
+,"CRUD-Marca"
+]

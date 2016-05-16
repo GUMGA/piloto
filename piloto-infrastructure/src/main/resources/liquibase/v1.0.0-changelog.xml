@@ -1,0 +1,848 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="felipe (generated)" id="1463079507342-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Entrega">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="endereco_zip_code" type="${varchar_255}"/>
+            <column name="endereco_premisse_type" type="${varchar_255}"/>
+            <column name="endereco_premisse" type="${varchar_255}"/>
+            <column name="endereco_number" type="${varchar_255}"/>
+            <column name="endereco_information" type="${varchar_255}"/>
+            <column name="endereco_neighbourhood" type="${varchar_255}"/>
+            <column name="endereco_localization" type="${varchar_255}"/>
+            <column name="endereco_state" type="${varchar_255}"/>
+            <column name="endereco_country" type="${varchar_255}"/>
+            <column name="quando" type="${datetime}"/>
+            <column name="quantidade" type="${smallint}"/>
+            <column name="version" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Entrega_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="endereco_zip_code" type="${varchar_255}"/>
+            <column name="endereco_premisse_type" type="${varchar_255}"/>
+            <column name="endereco_premisse" type="${varchar_255}"/>
+            <column name="endereco_number" type="${varchar_255}"/>
+            <column name="endereco_information" type="${varchar_255}"/>
+            <column name="endereco_neighbourhood" type="${varchar_255}"/>
+            <column name="endereco_localization" type="${varchar_255}"/>
+            <column name="endereco_state" type="${varchar_255}"/>
+            <column name="endereco_country" type="${varchar_255}"/>
+            <column name="quando" type="${datetime}"/>
+            <column name="quantidade" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_custom_field">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="active" type="${boolean}"/>
+            <column name="clazz" type="${varchar_255}"/>
+            <column name="defaultvaluescript" type="${varchar_255}"/>
+            <column name="description" type="${varchar_255}"/>
+            <column name="fieldgroup" type="${varchar_255}"/>
+            <column name="name" type="${varchar_255}"/>
+            <column name="optionlabelfield" type="${varchar_255}"/>
+            <column name="optionvaluefield" type="${varchar_255}"/>
+            <column name="options" type="${varchar_255}"/>
+            <column name="optionscollection" type="${varchar_255}"/>
+            <column name="translatekey" type="${varchar_255}"/>
+            <column name="type" type="${varchar_255}"/>
+            <column name="validationdescription" type="${varchar_255}"/>
+            <column name="validationscript" type="${varchar_255}"/>
+            <column name="visualizationorder" type="${longdecimal}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_field_value">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="datevalue" type="${datetime}"/>
+            <column name="gumgamodelid" type="${int}"/>
+            <column name="logicvalue" type="${boolean}"/>
+            <column name="numbervalue" type="${decimal}"/>
+            <column name="textvalue" type="${varchar_255}"/>
+            <column name="field_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-23" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_log">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="was_allowed" type="${boolean}"/>
+            <column name="endpoint" type="${varchar_255}"/>
+            <column name="ip" type="${varchar_255}"/>
+            <column name="gumga_login" type="${varchar_255}"/>
+            <column name="method" type="${varchar_255}"/>
+            <column name="operarationkey" type="${varchar_255}"/>
+            <column name="organization" type="${varchar_255}"/>
+            <column name="organizationcode" type="${varchar_255}"/>
+            <column name="quando" type="${datetime}"/>
+            <column name="software" type="${varchar_255}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-24" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_message">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="destinationlogin" type="${varchar_255}"/>
+            <column name="message" type="${varchar_255}"/>
+            <column name="senderlogin" type="${varchar_255}"/>
+            <column name="viewedin" type="${datetime}"/>
+            <column name="visibleon" type="${datetime}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-25" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="objectid" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="objecttype" type="${varchar_255}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="${smallint}"/>
+            <column name="definition_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-26" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag_def">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="name" type="${varchar_255}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-27" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag_def_gumga_tag_vdef">
+            <column name="gumga_tag_def_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attributes_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-28" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag_gumga_tag_val">
+            <column name="gumga_tag_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="values_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-29" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag_val">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="value" type="${varchar_255}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="${smallint}"/>
+            <column name="definition_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-30" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_tag_vdef">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="name" type="${varchar_255}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-31" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="gumga_user_data">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="description" type="${varchar_255}"/>
+            <column name="data_key" type="${varchar_255}"/>
+            <column name="userlogin" type="${varchar_255}"/>
+            <column name="data_value" type="${varchar_4000}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-32" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="GumgaRevisionEntity">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ip" type="${varchar_255}"/>
+            <column name="moment" type="${datetime}"/>
+            <column name="userlogin" type="${varchar_255}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-33" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoProduto">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="quantidade" type="${smallint}"/>
+            <column name="valor" type="${decimal}"/>
+            <column name="version" type="${smallint}"/>
+            <column name="produto_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-34" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoProduto_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="quantidade" type="${smallint}"/>
+            <column name="valor" type="${decimal}"/>
+            <column name="produto_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-35" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoProduto_Entrega">
+            <column name="itempedidoproduto_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entregas_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-36" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoProduto_Entrega_AUD">
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="itempedidoproduto_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entregas_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-37" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoServico">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="horas" type="${smallint}"/>
+            <column name="version" type="${smallint}"/>
+            <column name="servico_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-38" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ItemPedidoServico_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="horas" type="${smallint}"/>
+            <column name="servico_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-39" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Marca">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="location_latitude" type="${longdecimal}"/>
+            <column name="location_longitude" type="${longdecimal}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="version" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-40" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Marca_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="location_latitude" type="${longdecimal}"/>
+            <column name="location_longitude" type="${longdecimal}"/>
+            <column name="nome" type="${varchar_255}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-41" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="endentrega_zip_code" type="${varchar_255}"/>
+            <column name="endentrega_premisse_type" type="${varchar_255}"/>
+            <column name="endentrega_premisse" type="${varchar_255}"/>
+            <column name="endentrega_number" type="${varchar_255}"/>
+            <column name="endentrega_information" type="${varchar_255}"/>
+            <column name="endentrega_neighbourhood" type="${varchar_255}"/>
+            <column name="endentrega_localization" type="${varchar_255}"/>
+            <column name="endentrega_state" type="${varchar_255}"/>
+            <column name="endentrega_country" type="${varchar_255}"/>
+            <column name="numero" type="${varchar_255}"/>
+            <column name="quando" type="${datetime}"/>
+            <column name="version" type="${smallint}"/>
+            <column name="cliente_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-42" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="endentrega_zip_code" type="${varchar_255}"/>
+            <column name="endentrega_premisse_type" type="${varchar_255}"/>
+            <column name="endentrega_premisse" type="${varchar_255}"/>
+            <column name="endentrega_number" type="${varchar_255}"/>
+            <column name="endentrega_information" type="${varchar_255}"/>
+            <column name="endentrega_neighbourhood" type="${varchar_255}"/>
+            <column name="endentrega_localization" type="${varchar_255}"/>
+            <column name="endentrega_state" type="${varchar_255}"/>
+            <column name="endentrega_country" type="${varchar_255}"/>
+            <column name="numero" type="${varchar_255}"/>
+            <column name="quando" type="${datetime}"/>
+            <column name="cliente_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-43" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido_ItemPedidoProduto">
+            <column name="pedido_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="produtos_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-44" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido_ItemPedidoProduto_AUD">
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pedido_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="produtos_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-45" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido_ItemPedidoServico">
+            <column name="pedido_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="servicos_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-46" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pedido_ItemPedidoServico_AUD">
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pedido_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="servicos_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-47" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pessoa">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="ativo" type="${boolean}"/>
+            <column name="email" type="${varchar_255}"/>
+            <column name="endereco_zip_code" type="${varchar_255}"/>
+            <column name="endereco_premisse_type" type="${varchar_255}"/>
+            <column name="endereco_premisse" type="${varchar_255}"/>
+            <column name="endereco_number" type="${varchar_255}"/>
+            <column name="endereco_information" type="${varchar_255}"/>
+            <column name="endereco_neighbourhood" type="${varchar_255}"/>
+            <column name="endereco_localization" type="${varchar_255}"/>
+            <column name="endereco_state" type="${varchar_255}"/>
+            <column name="endereco_country" type="${varchar_255}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="telefone" type="${varchar_255}"/>
+            <column name="version" type="${smallint}"/>
+            <column name="cnpj" type="${varchar_255}"/>
+            <column name="url" type="${varchar_255}"/>
+            <column name="cpf" type="${varchar_255}"/>
+            <column name="datanascimento" type="${datetime}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-48" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pessoa_AUD">
+            <column name="dtype" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="ativo" type="${boolean}"/>
+            <column name="email" type="${varchar_255}"/>
+            <column name="endereco_zip_code" type="${varchar_255}"/>
+            <column name="endereco_premisse_type" type="${varchar_255}"/>
+            <column name="endereco_premisse" type="${varchar_255}"/>
+            <column name="endereco_number" type="${varchar_255}"/>
+            <column name="endereco_information" type="${varchar_255}"/>
+            <column name="endereco_neighbourhood" type="${varchar_255}"/>
+            <column name="endereco_localization" type="${varchar_255}"/>
+            <column name="endereco_state" type="${varchar_255}"/>
+            <column name="endereco_country" type="${varchar_255}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="telefone" type="${varchar_255}"/>
+            <column name="cpf" type="${varchar_255}"/>
+            <column name="datanascimento" type="${datetime}"/>
+            <column name="cnpj" type="${varchar_255}"/>
+            <column name="url" type="${varchar_255}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-49" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pessoa_Servico">
+            <column name="pessoa_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="capacidades_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-50" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Pessoa_Servico_AUD">
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pessoa_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="capacidades_id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-51" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Produto">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="quantidade" type="${smallint}"/>
+            <column name="valor" type="${decimal}"/>
+            <column name="version" type="${smallint}"/>
+            <column name="marca_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-52" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Produto_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="quantidade" type="${smallint}"/>
+            <column name="valor" type="${decimal}"/>
+            <column name="marca_id" type="${int}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-53" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Servico">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oi" type="${varchar_255}"/>
+            <column name="codigouniversal" type="${varchar_255}"/>
+            <column name="nome" type="${varchar_255}"/>
+            <column name="version" type="${smallint}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-54" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Servico_AUD">
+            <column name="id" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rev" type="${int}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="revtype" type="${smallint}"/>
+            <column name="codigouniversal" type="${varchar_255}"/>
+            <column name="nome" type="${varchar_255}"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-55" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="entrega_aud_pkey" tableName="Entrega_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-56" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="entrega_pkey" tableName="Entrega"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-57" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_custom_field_pkey" tableName="gumga_custom_field"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-58" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_field_value_pkey" tableName="gumga_field_value"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-59" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_log_pkey" tableName="gumga_log"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-60" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_message_pkey" tableName="gumga_message"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-61" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_tag_def_pkey" tableName="gumga_tag_def"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-62" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_tag_pkey" tableName="gumga_tag"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-63" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_tag_val_pkey" tableName="gumga_tag_val"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-64" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_tag_vdef_pkey" tableName="gumga_tag_vdef"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-65" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumga_user_data_pkey" tableName="gumga_user_data"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-66" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="gumgarevisionentity_pkey" tableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-67" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="itempedidoproduto_aud_pkey" tableName="ItemPedidoProduto_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-68" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rev, itempedidoproduto_id, entregas_id" constraintName="ipd_entrega_aud_pkey" tableName="ItemPedidoProduto_Entrega_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-69" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="itempedidoproduto_pkey" tableName="ItemPedidoProduto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-70" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="itempedidoservico_aud_pkey" tableName="ItemPedidoServico_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-71" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="itempedidoservico_pkey" tableName="ItemPedidoServico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-72" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="marca_aud_pkey" tableName="Marca_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-73" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="marca_pkey" tableName="Marca"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-74" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="pedido_aud_pkey" tableName="Pedido_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-75" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rev, pedido_id, produtos_id" constraintName="pedido_ipp_aud_pkey" tableName="Pedido_ItemPedidoProduto_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-76" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rev, pedido_id, servicos_id" constraintName="pedido_ips_aud_pkey" tableName="Pedido_ItemPedidoServico_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-77" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="pedido_pkey" tableName="Pedido"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-78" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="pessoa_aud_pkey" tableName="Pessoa_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-79" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="pessoa_pkey" tableName="Pessoa"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-80" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rev, pessoa_id, capacidades_id" constraintName="pessoa_servico_aud_pkey" tableName="Pessoa_Servico_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-81" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="pessoa_id, capacidades_id" constraintName="pessoa_servico_pkey" tableName="Pessoa_Servico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-82" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="produto_aud_pkey" tableName="Produto_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-83" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="produto_pkey" tableName="Produto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-84" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id, rev" constraintName="servico_aud_pkey" tableName="Servico_AUD"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-85" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="id" constraintName="servico_pkey" tableName="Servico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-86" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="entregas_id" constraintName="uk_2l5g1h18l6iwtlx0rw7i89ovt" tableName="ItemPedidoProduto_Entrega"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-87" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="attributes_id" constraintName="uk_3inr0arx7tvpask2lxgu3lo7f" tableName="gumga_tag_def_gumga_tag_vdef"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-88" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="produtos_id" constraintName="uk_5ktvl3x74gmxwmpe88lw53lk2" tableName="Pedido_ItemPedidoProduto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-89" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="servicos_id" constraintName="uk_d2nnbodjkvgshwoim5wskh866" tableName="Pedido_ItemPedidoServico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-90" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="values_id" constraintName="uk_eyiy022bs09og1v5x1x91c0n1" tableName="gumga_tag_gumga_tag_val"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-91" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Servico_AUD" constraintName="fk_1518gj6oapnf823js144cuxep" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-92" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="pessoa_id" baseTableName="Pessoa_Servico" constraintName="fk_1uj7w8qdmaseamq7fubj8b7hp" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Pessoa"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-93" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="capacidades_id" baseTableName="Pessoa_Servico" constraintName="fk_2046dksaljgf55fuuwjb9js9t" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Servico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-94" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="servico_id" baseTableName="ItemPedidoServico" constraintName="fk_2fhy3ld7rhuicm72p6psimaqx" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Servico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-95" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="entregas_id" baseTableName="ItemPedidoProduto_Entrega" constraintName="fk_2l5g1h18l6iwtlx0rw7i89ovt" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Entrega"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-96" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="attributes_id" baseTableName="gumga_tag_def_gumga_tag_vdef" constraintName="fk_3inr0arx7tvpask2lxgu3lo7f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag_vdef"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-97" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="ItemPedidoProduto_Entrega_AUD" constraintName="fk_4q689xjqq1sxt46rrto92fncj" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-98" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="pedido_id" baseTableName="Pedido_ItemPedidoProduto" constraintName="fk_5hxy5oqne0d2u9faxplcdtxqe" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Pedido"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-99" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="produtos_id" baseTableName="Pedido_ItemPedidoProduto" constraintName="fk_5ktvl3x74gmxwmpe88lw53lk2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ItemPedidoProduto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-100" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="gumga_tag_def_id" baseTableName="gumga_tag_def_gumga_tag_vdef" constraintName="fk_8edbw827ali0fs75ephdx2nd4" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag_def"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-101" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Pedido_ItemPedidoProduto_AUD" constraintName="fk_c7e0gv35kb9b2bvnhi9ldwiwo" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-102" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="itempedidoproduto_id" baseTableName="ItemPedidoProduto_Entrega" constraintName="fk_d0jw6mx0w8fxyq82xr8bmc0am" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ItemPedidoProduto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-103" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="servicos_id" baseTableName="Pedido_ItemPedidoServico" constraintName="fk_d2nnbodjkvgshwoim5wskh866" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ItemPedidoServico"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-104" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="definition_id" baseTableName="gumga_tag_val" constraintName="fk_d4jbeat1ougv8kfal4f41lpo1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag_vdef"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-105" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="definition_id" baseTableName="gumga_tag" constraintName="fk_evj2nfrftl0neq7p8d0bom047" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag_def"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-106" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="values_id" baseTableName="gumga_tag_gumga_tag_val" constraintName="fk_eyiy022bs09og1v5x1x91c0n1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag_val"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-107" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Pessoa_Servico_AUD" constraintName="fk_g4yvpmnwn7e631ukjkilja9rx" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-108" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="pedido_id" baseTableName="Pedido_ItemPedidoServico" constraintName="fk_gesnc4q5a41msdgh4f9ligr27" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Pedido"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-109" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Pessoa_AUD" constraintName="fk_go0o0uve0cn3d0e9gvsadfw2j" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-110" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Pedido_AUD" constraintName="fk_hd43qyrtv8b0l1ipdanrg7pc3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-111" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Entrega_AUD" constraintName="fk_i4gg1etgbxft0ov6d746mcjgu" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-112" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="ItemPedidoServico_AUD" constraintName="fk_itbttjy2e2y5ak2ubf37iprv6" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-113" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Produto_AUD" constraintName="fk_ldoshjytn3qfvmlrvevfrveqg" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-114" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="gumga_tag_id" baseTableName="gumga_tag_gumga_tag_val" constraintName="fk_lm7o1m6ayl7uqumeb13r77bb1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_tag"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-115" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="field_id" baseTableName="gumga_field_value" constraintName="fk_nkvnt8mvv29u2h1cpd80i77au" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gumga_custom_field"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-116" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="cliente_id" baseTableName="Pedido" constraintName="fk_nmx283i28kpfbnjwln34xu8lm" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Pessoa"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-117" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Marca_AUD" constraintName="fk_nnp4vf7xqyu12menserxes169" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-118" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="marca_id" baseTableName="Produto" constraintName="fk_nurdtcs13e2jlx6g6jfgjxf0a" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Marca"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-119" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="produto_id" baseTableName="ItemPedidoProduto" constraintName="fk_oqa38kju48k977w1p71iteyfq" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="Produto"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-120" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="Pedido_ItemPedidoServico_AUD" constraintName="fk_t41uu90we6uw6c1gh77xygkvt" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-121" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="rev" baseTableName="ItemPedidoProduto_AUD" constraintName="fk_toe4nyo7js1fu8rlbjpswinhi" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="GumgaRevisionEntity"/>
+    </changeSet>
+
+    <changeSet author="felipe (generated)" id="1463079507342-122" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="hibernate_sequence" incrementBy="1" startValue="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-123" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Entrega" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-124" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_entrega" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-125" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_custom_field" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-126" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_custom_field" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-127" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_field_value" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-128" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_field_value" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-129" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_message" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-130" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_message" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-131" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_tag" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-132" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_tag" incrementBy="1"  startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-133" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_tag_def" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-134" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_tag_def" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-135" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_tag_val" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-136" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_tag_val" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-137" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_tag_vdef" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-138" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_tag_val_def" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-139" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_user_data" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-140" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_gumga_user_data" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-141" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="ItemPedidoProduto" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-142" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_itempedidoproduto" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-143" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="ItemPedidoServico" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-144" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_itempedidoservico" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-145" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="gumga_log" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-146" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_log" incrementBy="1" startValue="1" />
+    </changeSet>
+
+    <changeSet author="felipe (generated)" id="1463079507342-147" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Marca" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-148" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_marca" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-149" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Pedido" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-150" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_pedido" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-151" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Pessoa" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-152" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_pessoa" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-153" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Produto" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-154" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+    <createSequence sequenceName="seq_produto" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-155" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="Servico" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-156" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="oracle, postgresql, h2">
+        <createSequence sequenceName="seq_servico" incrementBy="1" startValue="1" />
+    </changeSet>
+    <changeSet author="felipe (generated)" id="1463079507342-157" objectQuotingStrategy="QUOTE_ALL_OBJECTS" dbms="mysql">
+        <addAutoIncrement tableName="GumgaRevisionEntity" columnName="id" columnDataType="${int}" incrementBy="1" startWith="1"/>
+    </changeSet>
+</databaseChangeLog>

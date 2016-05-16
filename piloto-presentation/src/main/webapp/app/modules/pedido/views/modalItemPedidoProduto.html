@@ -1,0 +1,46 @@
+	<form name="Modal">
+	    <div class="modal-header">
+	        <h3 class="modal-title" gumga-translate-tag="itempedidoproduto.title"></h3>
+	    </div>
+	    <div class="modal-body" style="overflow: auto">
+		
+
+	<div gumga-form-class="produto">
+		<label gumga-translate-tag="pedido.produto">produto</label>
+	    <gumga-many-to-one
+	            input-name="produto"
+	            value="pedido.data.produto"
+	            search-method="produto.methods.asyncSearch('nome', param)"
+	            field="nome"
+	            authorize-add="true"
+	            post-method="produto.methods.asyncPost(value, 'nome')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+	<div gumga-form-class="quantidade">
+		<label gumga-translate-tag="pedido.quantidade">quantidade</label>
+		<input gumga-error type="text" name="quantidade" ng-model="pedido.data.quantidade"  class="form-control" />
+	</div>		
+	<div gumga-form-class="valor">
+		<label gumga-translate-tag="pedido.valor">valor</label>
+		<input gumga-error type="text" name="valor" ng-model="pedido.data.valor"  class="form-control" />
+	</div>		
+
+	<div class="full-width-without-padding">
+	    <label for="entregas" gumga-translate-tag="pedido.entregas"></label>
+	
+		<gumga-one-to-many
+		        children="pedido.data.entregas"
+		        template-url="app/modules/itempedidoproduto/views/modalEntrega.html"
+		        displayable-property="quando"
+		        controller="ModalEntregaController">
+		</gumga-one-to-many>
+	</div>
+	    </div>
+	    <div class="clearfix"></div>
+	    <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" ng-click="ok(pedido.data)" ng-disabled="Modal.$invalid">OK</button>
+	        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	    </div>
+	</form>

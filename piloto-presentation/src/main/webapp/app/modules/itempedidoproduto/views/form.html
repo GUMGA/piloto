@@ -1,0 +1,45 @@
+<form name="ItemPedidoProdutoForm" gumga-form novalidate>
+		
+
+	<div gumga-form-class="produto">
+		<label gumga-translate-tag="itempedidoproduto.produto">produto</label>
+	    <gumga-many-to-one
+	            input-name="produto"
+	            value="itempedidoproduto.data.produto"
+	            search-method="produto.methods.asyncSearch('nome', param)"
+	            field="nome"
+	            authorize-add="true"
+	            post-method="produto.methods.asyncPost(value, 'nome')">
+	    </gumga-many-to-one>
+	</div>
+
+		
+	<div gumga-form-class="quantidade">
+		<label gumga-translate-tag="itempedidoproduto.quantidade">quantidade</label>
+		<input gumga-error type="text" name="quantidade" ng-model="itempedidoproduto.data.quantidade"  class="form-control" />
+	</div>		
+	<div gumga-form-class="valor">
+		<label gumga-translate-tag="itempedidoproduto.valor">valor</label>
+		<input gumga-error type="text" name="valor" ng-model="itempedidoproduto.data.valor"  class="form-control" />
+	</div>		
+
+	<div class="full-width-without-padding">
+	    <label for="entregas" gumga-translate-tag="itempedidoproduto.entregas"></label>
+	
+		<gumga-one-to-many
+		        children="itempedidoproduto.data.entregas"
+		        template-url="app/modules/itempedidoproduto/views/modalEntrega.html"
+		        displayable-property="quando"
+		        controller="ModalEntregaController">
+		</gumga-one-to-many>
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="itempedidoproduto.list"
+            submit="itempedidoproduto.methods.put(itempedidoproduto.data)"
+            position="right"
+            valid="ItemPedidoProdutoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

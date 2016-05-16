@@ -1,0 +1,55 @@
+<form name="ClienteForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="cliente.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="cliente.data.nome"  class="form-control" />
+	</div>		
+
+	<div gumga-form-class="email">
+	    <label gumga-translate-tag="cliente.email">email</label>
+	    <input id="email" gumga-error type="email" name="email"  ng-model="cliente.data.email.value" class="form-control"/>
+	</div>
+		
+
+	<div gumga-form-class="telefone">
+		<label gumga-translate-tag="cliente.telefone">telefone</label>
+		<input id="telefone" gumga-error type="text" name="telefone"  ng-model="cliente.data.telefone.value" class="form-control" ui-br-phone-number/>
+	</div>
+		
+
+	<div class="row">
+		<div class="col-md-12">
+			<gumga-address name="endereco" value="cliente.data.endereco" street="false"> </gumga-address>
+		</div>
+	</div>
+		
+
+	<div gumga-form-class="ativo">
+		<label gumga-translate-tag="cliente.ativo">ativo</label>
+		<input style="width:15px" gumga-error type="checkbox"  name="ativo" ng-model="cliente.data.ativo.value" class="form-control" />
+	</div>
+		
+
+	<div gumga-form-class="cnpj">
+	    <input id="cnpj"
+	            gumga-mask="99.999.999/9999-99"
+	            gumga-error type="text" name="cnpj"
+	            
+	            ng-model="cliente.data.cnpj.value"
+	            class="form-control"/>
+	</div>
+
+	<div gumga-form-class="url">
+		<label gumga-translate-tag="cliente.url">url</label>
+		<input gumga-error type="url" name="url"   ng-model="cliente.data.url.value" class="form-control" />
+	</div>
+    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="cliente.list"
+            submit="cliente.methods.put(cliente.data)"
+            position="right"
+            valid="ClienteForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>
